@@ -1,5 +1,6 @@
 import React from 'react'
 import { Ticket } from './Ticket'
+import { useHistory } from "react-router-dom";
 
 import './TicketItem.css';
 
@@ -8,10 +9,13 @@ interface Props {
 }
 
 const TicketItem = ({ ticket }: Props) => {
+
+  const history = useHistory();
+
   return (
     <div className="col-md-4 p-2">
       <div className="card card-body ticket-card" style={{ cursor: 'pointer' }}
-        onClick={() => console.log(ticket)}>
+        onClick={() => history.push(`ticket-agent/${ticket._id}`)}>
         <h3 className="card-header">{ticket.title}</h3>
         {/* <h1>{ticket.title}</h1> */}
         <p>{ticket.description}</p>

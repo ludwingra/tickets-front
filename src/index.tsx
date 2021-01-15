@@ -7,13 +7,12 @@ import { ToastContainer } from "react-toastify";
 import Tickets from './components/Tickets/Tickets';
 import TicketForm from './components/Tickets/TicketForm';
 import Navbar from './components/Navbar/Navbar';
-import Agent from "./components/Agent/Agent";
+import Agents from './components/Agents/Agents';
+import TicketAgent from './components/Tickets/TicketAgent';
 
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootswatch/dist/pulse/bootstrap.min.css';
 import './index.css';
-
-
 
 
 ReactDOM.render(
@@ -26,7 +25,8 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={Tickets} />
           <Route path="/new-ticket" component={TicketForm} />
-          <Route path="/agent" component={Agent} />
+          <Route path="/agent" component={Agents} />
+          <Route path="/ticket-agent/:id" component={TicketAgent} />
         </Switch>
         <ToastContainer />
       </div>
