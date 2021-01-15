@@ -17,7 +17,7 @@ const Tickets = () => {
   }, [])
 
   return (
-    <div>
+    <div className="row">
       { tickets.map((ticket) => {
         return <TicketItem ticket={ticket} />
       })}
