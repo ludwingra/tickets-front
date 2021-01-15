@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Tickets from './components/Tickets/Tickets';
+import TicketForm from './components/Tickets/TicketForm';
+
+import 'bootswatch/dist/pulse/bootstrap.min.css';
+import './index.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Tickets} />
+        <Route path="/new-ticket" component={TicketForm} />
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
