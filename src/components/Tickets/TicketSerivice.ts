@@ -19,3 +19,20 @@ export const createTickets = async (ticket: Ticket) => {
     console.error(error);
   }
 }
+// Obtener ticket por id
+export const getTicket = async (id: string) => {
+  try {
+    return await axios.get<Ticket>(`${API}/tickets/${id}`);
+  } catch (error) {
+    console.error(error);
+  }
+}
+// Obtener ticket por id
+export const solvedTicket = async (id: string) => {
+  try {
+    return await axios.get(`${API}/tickets/solved/${id}`);
+  } catch (error) {
+    console.error(error);
+  }
+}
+// solved/:id

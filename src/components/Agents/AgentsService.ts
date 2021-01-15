@@ -38,3 +38,11 @@ export const disconnectAgents = async (id: string) => {
     console.error(error);
   }
 }
+// Obtener Agente por id
+export const getAgent = async (id: string) => {
+  try {
+    return await axios.get<AgentInterface>(`${API}/agent/${id}`);
+  } catch (error) {
+    console.error(error);
+  }
+}

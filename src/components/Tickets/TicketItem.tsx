@@ -1,6 +1,7 @@
 import React from 'react'
 import { Ticket } from './Ticket'
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import './TicketItem.css';
 
@@ -12,10 +13,18 @@ const TicketItem = ({ ticket }: Props) => {
 
   const history = useHistory();
 
+  const handleChangeTicket = () => {
+    if (ticket.status) {
+      toast.info('El ticket ya está resuelto');
+    } else {
+      history.push(`ticket-agent/${ticket._id}`)
+    }
+  }
+
   return (
     <div className="col-md-4 p-2">
       <div className="card card-body ticket-card" style={{ cursor: 'pointer' }}
-        onClick={() => history.push(`ticket-agent/${ticket._id}`)}>
+        onClick={handleChangeTicket}>
         <h3 className="card-header">{ticket.title}</h3>
         {/* <h1>{ticket.title}</h1> */}
         <p>{ticket.description}</p>

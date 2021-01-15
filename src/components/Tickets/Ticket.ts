@@ -8,4 +8,5 @@ export interface Ticket {
   _id?: string;
   updatedAt?: string;
   createdAt?: string;
+  agentName?: string;
 }
